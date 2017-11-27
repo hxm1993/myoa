@@ -61,6 +61,18 @@ class UserModel extends Model{
                 session('id',$info['user_id']);
                 session('dept',$info['user_dept']);
                 session('nickname',$info['user_nickname']);
+
+//                //根据当前用户的user_role，找到oa_role中对应的role的信息
+//                $role = D('Role');
+//                $roleInfo= $role->find($info['user_role']);
+//                $roleIds = $roleInfo['role_ids'];
+//                //根据role_ids找到对应的节点
+//                $node = D('Node');
+//                $nodeInfo = $node->select($roleIds);
+//                dump($node);
+
+
+//                session('')
                 return true;
             }else {
                 return false;
