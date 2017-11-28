@@ -45,6 +45,7 @@ class LoginController extends Controller{
     }
 
     public function loginOut() {
-        echo 'aaa';
+        session(null);
+        $this->redirect("Login/login","",3,"正在退出...");
     }
 }

@@ -25,24 +25,24 @@ $(".nav").on("click","li",function(e){
 	return false;
 });
 
-//$('.exitDialog').Dialog({
-//	title:'提示信息',
-//	autoOpen: false,
-//	width:400,
-//	height:200
-//
-//});
-//
-//$('.exit').click(function(){
-//	$('.exitDialog').Dialog('open');
-//});
-//
-//
-//
-//$('.exitDialog input[type=button]').click(function(e) {
-//    $('.exitDialog').Dialog('close');
-//
-//	if($(this).hasClass('ok')){
-//		window.location.href = "{:U('Login/loginOut')}"	;
-//	}
-//});
+$('.exitDialog').Dialog({
+	title:'提示信息',
+	autoOpen: false,
+	width:400,
+	height:200
+
+});
+
+$('.exit').click(function(){
+	$('.exitDialog').Dialog('open');
+});
+
+
+
+$('.exitDialog input[type=button]').click(function(e) {
+    $('.exitDialog').Dialog('close');
+
+	if($(this).hasClass('ok')){
+		window.location.href = "/Login/loginOut";
+	}
+});

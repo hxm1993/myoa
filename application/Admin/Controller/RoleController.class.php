@@ -16,8 +16,6 @@ class RoleController extends CommonController {
     public function distribute() {
         $model = D('Node');
         $nodeList = $model->select();
-//        $id = I("get.id");
-//        $this->assign('rid',$id);
         $this->assign('nodeList',$nodeList);
         $this->display();
     }
@@ -28,7 +26,7 @@ class RoleController extends CommonController {
         $model = D('Role');
         $node = D('Node');
         $nodes = $node->select($ids);
-        $str = "";
+        $str = "Admin-Main-index,Admin-Main-home,";
         foreach($nodes as $val) {
             if($val['node_path'] != 'null') {
                 $str .= $val['node_path'] . ",";
@@ -41,8 +39,6 @@ class RoleController extends CommonController {
             role_ids => $ids,
             role_paths => $str
         );
-//        dump($arr);
-//        exit;
         if($model->save($arr)) {
             $this->success("权限分配成功",U('index'),3);
         }else {
